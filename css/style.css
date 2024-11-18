@@ -1,0 +1,469 @@
+@font-face {
+    font-family: "Futra-bold";
+    src: url(../fonts/futura/Futura\ Std\ Heavy.ttf);
+}
+@font-face {
+    font-family: "Futra-std-italic";
+    src: url(../fonts/futura/Futura\ Std\ Book\ Oblique.ttf);
+}
+@font-face {
+    font-family: "Futra-std-bold-italic";
+    src: url(../fonts/futura/Futura\ Std\ Bold\ Oblique.ttf);
+}
+@font-face {
+    font-family: "Futra-std-book";
+    src: url(../fonts/futura/Futura\ Std\ Book.ttf);
+}
+@font-face {
+    font-family: "Digital";
+    src: url(../fonts/digital-7/digital-7.ttf);
+}
+@font-face {
+    font-family: "MuseoSans_300";
+    src: url(../fonts/MuseoSans_300.otf);
+}
+@font-face {
+    font-family: "MuseoSans_500";
+    src: url(../fonts/MuseoSans_500.otf);
+}
+@font-face {
+    font-family: "MuseoSans_700";
+    src: url(../fonts/MuseoSans_700.otf);
+}
+@font-face {
+    font-family: "MuseoSans_900";
+    src: url(../fonts/MuseoSans_900.otf);
+}
+body{
+    background-color: #022925;
+    min-height: 100vh;
+}
+.bg-graphic{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+.bg-circle{
+    background: radial-gradient(57.14% 57.14% at 50.02% 42.86%, rgba(215, 57, 46, 0.175) 0%, rgba(215, 57, 46, 0) 100%);
+    position: absolute;
+    border-radius: 50%;
+}
+.circle-1{
+    width: 1660px;
+    height: 1590px;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+.circle-2{
+    width: 1957px;
+    height: 1842px;
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, 50%) rotate(180deg);
+}
+main{
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+.top-header-img{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+.stars-img{
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+.ru-logo{
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 250px;
+    transition: all .5s;
+}
+.ru-logo img{
+    width: 100%;
+    transition: all .5s;
+}
+.best-time-box{
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.best-time{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    filter: drop-shadow( -2px 3px 10px rgba(0, 0, 0, 0.50));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.best-time span:first-child{
+    font-family: "MuseoSans_900";
+    font-size: 25px;
+    color: #00FFF7;
+    line-height: 1.2;
+}
+.best-time span:last-child{
+    font-family: "MuseoSans_900";
+    font-size: 40px;
+    color: #fff;
+    font-style: italic;
+    line-height: 1.2;
+}
+.match-logo{
+    position: absolute;
+    width: 613px;
+    top: 41%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    transition: all .5s;
+}
+.next-btn{
+    all: unset;
+    background-color: #fff;
+    color: #00A19C;
+    padding: 25px 180px;
+    border-radius: 0px 50px 50px 50px;
+    font-size: 75px;
+    font-style: italic;
+    line-height: 1;
+    border: none;
+    display: block;
+    margin: auto;
+    /* text-transform: uppercase; */
+    font-family: "MuseoSans_900";
+    position: relative;
+    transition: all .5s;
+    width: max-content;
+}
+.next-btn img{
+    max-width: 80%;
+}
+.next-btn-container{
+    position: absolute;
+    left: 50%;
+    bottom: 454px;
+    transform: translateX(-50%);
+    transition: all .5s;
+
+}
+.next-btn-container::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -15px;
+    bottom: -15px;
+    background-color: transparent;
+    border-radius: 0px 50px 50px 50px;
+    border: 3px solid #00FFF7;
+    z-index: -9;
+}
+.back-btn{
+    all: unset;
+    font-family: "MuseoSans_500";
+    color: white;
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.steps-section{
+    position: absolute;
+    top: 225px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .5s;
+}
+.steps-section h1{
+    color: white;
+    font-size: 100px;
+    font-style: italic;
+    text-align: center;
+    font-family: "MuseoSans_900";
+}
+.steps-section ul{
+    width: 98%;
+    margin: auto;
+    padding: 0;
+    list-style: none;
+}
+.steps-section ul li{
+    counter-increment: step-counter;
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    margin: 213px auto;
+    width: 75%;
+    font-family: "MuseoSans_500";
+    position: relative;
+}
+.steps-section ul li::before{
+    content: counter(step-counter);
+    position: absolute;
+    font-size: 150px;
+    top: 00%;
+    left: 50%;
+    transform: translate(-50%,-80%);
+    color: rgba(255, 255, 255, 0.16);
+    z-index: -1;
+    font-family: "MuseoSans_900";
+    -webkit-text-stroke: 1px #00FFF7;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+}
+#user-form{
+    position: absolute;
+    top: 307px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .5s;
+}
+#user-form label{
+    color: white;
+    font-size: 75px;
+    text-align: center;
+    font-family: "MuseoSans_900";
+    display: block;
+    margin-bottom: 54px;
+}
+#user-form input{
+    width: 100%;
+    font-size: 60px;
+    color: white;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid #BED731;
+    text-align: center;
+    outline: none;
+    margin-bottom: 140px;
+    font-family: "MuseoSans_500";
+    caret-color: #BED731
+}
+#user-form input::placeholder{
+    color: white;
+}
+.memory-game{
+    position: absolute;
+    top: 219px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .5s;
+}
+.memory-game p{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 32px;
+    color: white;
+    font-family: "MuseoSans_500";
+    text-align: center;
+    font-size: 40px;
+    text-shadow: -1px 2px 5px rgba(0, 0, 0, 0.50);
+}
+.counter{
+    font-family: "Digital";
+    font-size: 96px;
+    letter-spacing: 65px;
+    text-align: center;
+    display: block;
+    margin: auto;
+    position: relative;
+    width: max-content;
+    text-align: center;
+    color: white;
+    width: 242px;
+}
+.counter::after,
+.counter::before{
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.1) 100%);
+    border: 0.5px solid white;
+    opacity: 0.5;
+    z-index: -1;
+}
+.counter::after{
+    right: 0;
+    transform: translateX(-50%);
+}
+.counter::before{
+    left: 0;
+    transform: translateX(-20%);
+}
+.game-board{
+    background: #20419A;
+    padding: 20px;
+    border-radius: 30px;
+    margin-top: 32px;
+    perspective: 1000px;
+    box-shadow: inset 0px 0px 10px #000000 ;
+}
+.game-board-inner{
+    background: white;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    padding: 25px;
+    border-radius: 10px;
+   
+}
+.memory-card{
+    background: #BED731;
+    border-radius: 10px;
+    padding: 4px 4.5px;
+    aspect-ratio: 1.21/1;
+    position: relative;
+}
+.memory-card::after,
+.memory-card::before{
+    content: "";
+    background: #763F98;
+    height: 30px;
+    width: 8px;
+    border-radius: 2px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+.memory-card::after{
+    left: 6px;
+}
+.memory-card::before{
+    right: 5px;
+}
+.memory-card-inner{
+    background-color: #00A99D;
+    padding: 4.5px 4.5px;
+    border-radius: 8px;
+    aspect-ratio: 1.21/1;
+    transition: transform .5s;
+    position: relative;
+    width: 100%;
+    transform-style: preserve-3d;
+}
+.front-face{
+    background: #00A99D;
+    border-radius: 8px;
+    position: absolute;
+    backface-visibility: hidden;
+    aspect-ratio: 1.21/1;
+    width: calc(100% - 9px);
+    right: 4.5px;
+    top: 3.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.back-face{
+    background: white;
+    border-radius: 8px;
+    transform: rotateX(180deg);
+    position: absolute;
+    backface-visibility: hidden;
+    width: calc(100% - 9px);
+    left: 4.5px;
+    top: 1.5px;
+    aspect-ratio: 1.21/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.front-face img{
+    width: 50%;
+}
+.back-face img{
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+.memory-card-inner.flip {
+    transform: rotateX(180deg);
+}
+.score-section{
+    position: absolute;
+    top: 307px;
+    width: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+}
+.score-section h1{
+    color: white;
+    font-size: 75px;
+    text-align: center;
+    font-family: "MuseoSans_900";
+}
+.score-section h4{
+    margin-top: 91px;
+    font-size: 70px;
+    text-align: center;
+    color: white;
+    font-family: "MuseoSans_900";
+    margin-bottom: 31px;
+}
+.score-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 58px;
+}
+.score-container span::before{
+    content: "";
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.1) 100%);
+    position: absolute;
+    width: 125%;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+    opacity: 0.5;
+    border: 0.5px solid rgba(255, 255, 255, 1);
+}
+.score-container span{
+    position: relative;
+    font-family: "MuseoSans_900";
+    color: white;
+    font-size: 250px;
+    line-height: 1.3;
+}
+.footer-img{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
